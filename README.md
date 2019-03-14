@@ -3,6 +3,8 @@ Elite Dangerous star viewer using the Unity UI System
 
 Simple UI setup demonstrating placing Unity UI objects relative to a 3D scene and optimizing for displaying only items in view.
 
+![](Images/DemoScene.png)
+
 # Demo
 
 Check out Adam's awesome [UI Live training session](https://youtu.be/0L-Y8dPJHDM), check full of UI goodness.
