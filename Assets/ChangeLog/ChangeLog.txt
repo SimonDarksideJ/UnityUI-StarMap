@@ -1,0 +1,97 @@
+Change Log:
+
+1.04
+Initial Commit
+
+1.05
+Updates
+(Failed) Move Labels to ScreenSpace
+
+1.06
+Changed the Camera's Clamp Distace to V2 (5, 50)
+(Failed) Update to prevent UI Events working the camera (slider)
+Added basic line renderers to show connections
+Updated System Information Graphic for denser BG & Border
+Moved Labels into Screen Space
+	(Much much better performance!)
+Increased Jump Range to 20, just in case...
+Changed color of Jump Lines to a Sea Green
+
+1.07
+Updated star list to @700+ stars (with new origin point)
+
+1.08
+Changed typeface for the stars to Google's Eurostyle-like "Michroma"
+Changed the Camera's Clamp Distance to V2 (10, 50)
+Changed starting distance to 15
+Changed Camera's FOV to 45
+Changed MapController.LabelOffset to V3 (0, 5, 0)
+Changed MapController.ClampViewDistance to V2 (15, 55)
+Added "Star Size" variable to Map Controller for better control over the stars
+Changed MapController.starSize from 1.0 to 0.5
+Created persistent Camera Target to move in the scene for the camera to track
+Added the ability to Pan & Dolly within the star volume
+Created stub for setting star data
+Fixed and Optimized jump distance lines
+	(including: Make jump lines recalculate on slider change)
+	
+1.09
+Added slot in PlayerPrefs to save last known star to maintain last seleted location.
+Changed from using "transform.position" to "Vector3 star.coordinates"
+Removed Preinstantiated Target Object
+CameraLookAt now generates it's own target
+Setup Buttons for "Allegiance, Economy, Government & Black Market"
+Changed Button Typeface to Microma
+Created stub panel for "Allegiance Button"
+	abandoned this due to not being able to shift the pivot
+Added Roboto Typeface, but probably won't use it
+
+1.10
+Made the base panel for the "Allegiance", "Economy" & "Government"  Buttons
+	including functional, but empty buttons as placeholders
+	including all normal UI functionality within the panel...
+	... but not actually doing anything with data.
+Created Colour-scheme for panels (staying in the orange and blue realm)
+Trapped when the pointer is over the UI Panel
+	Hackish, but better than nothing
+	
+1.11
+Moved "TogglePanel()" from "HUDController" to a new "UIController"
+Created "UIController" instance on main Canvas for "TogglePanel()"
+Obtained & Implemented "SetInputFieldValue" script
+Obtained & Implemented "SetSliderValue" script
+Returned Allegiance Menu to 1:1 scale, and adjusted child objects
+Changed main Canvas to Pixel Perfect
+Attempting to move child panels to separate canvases, but failing
+Note: SetInputValue reverts to typed value when returning to input field (noted in UI Chat)
+Note: InputField errors if there is no value in the text field (http://pastebin.com/M2sm7Mje)
+Removed "UIController"
+Implemented and Refactored "TogglePanel()" as an anonymous function as "Toggle()" on the "TogglePanel" script
+Tweaked Slider Image Values (need to report this...) to make them clean
+	"Highlight" on text overflowing the Background (need to report this...) still
+Imported JSON for .NET Library (need to BUY this for TAR)
+Tried and Removed using a Canvas on the drop down panels.
+	(This will be broken until 4.6.1, at least...)
+Created DataController to connect to the EDSC:
+	http://edstarcoordinator.com/api.asmx/GetSystems
+	Successfully connecting and updating the Star Systems live
+	Successfully saving the Star Systems as persistent data
+	Successfully reading the Star Systems from persistent data on StartUp
+Moved the raw system data over to "MapController" as this is who needs it
+Adaped "MapController" to use the Raw Map Data from EDSC
+Laid groundwork on clean refresh of Star Database... this still causes issues and needs attention
+Update to 4.6f2
+
+
+
+TODO: 
+	All of these labels are active... 
+		... so these could be used to pick the stars, avoiding colliders!
+	Include an options menu to save all of these items:
+		Type Size, Type Color, Zoom Cap, Jump Range Cap
+	Create "Add New Star" to the UI
+	Create "Push star data" to the back end
+	Create local representation of the star data so it can be changed
+	Consider hiding parts of the query to EDSC, like "DateAndTime", the coordinate filters...
+	Need popup warning dialogue in "DataController"
+	public RawData rawData; in "DataController" needs to be set to private when done testing
